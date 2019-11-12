@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilterService } from './filter.service';
 
 @Component({
   selector: 'app-latest-filter',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LatestFilterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private filterService: FilterService) { }
 
   ngOnInit() {
   }
 
+  checkValue() {
+    this.filterService.switchMapConnector.subscribe();
+  }
 }

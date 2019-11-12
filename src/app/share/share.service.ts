@@ -8,9 +8,10 @@ import { share } from 'rxjs/operators';
 })
 export class ShareService {
   shareConnector$;
-  constructor(private dataService:DataService) { 
-    
-  this.shareConnector$ = this.dataService.get();
+  constructor(private dataService: DataService) {
+    this.shareConnector$ = this.dataService.get().pipe(
+      share()
+    );
 
   }
 

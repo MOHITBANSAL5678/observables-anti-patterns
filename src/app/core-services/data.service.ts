@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from "@angular/common/http";
 
 import { Observable, throwError } from 'rxjs';
-import { retry, map, catchError, observeOn, share } from 'rxjs/operators';
-
+import { retry, map, catchError, observeOn, share, delay } from 'rxjs/operators';
 @Injectable()
 
 export class DataService {
@@ -27,7 +26,7 @@ export class DataService {
       );
   }
 
-  get(url = "https://reqres.in/api/users?page=2", params?: any): Observable<any> {
+  get(url = "https://reqres.in/api/users?page=2?t=" + new Date().getTime(), params?: any): Observable<any> {
     let options = {};
     this.setHeaders(options);
     return this.http.get(url, options)
@@ -35,7 +34,8 @@ export class DataService {
         map((res: any) => {
           return res;
         }),
-        share(),
+        delay(400),
+        // share(),
         catchError(this.handleError)
       );
   }
