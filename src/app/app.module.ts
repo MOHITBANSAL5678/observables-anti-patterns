@@ -2,16 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StudentModule } from './student/student.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { TwoCallsComponent } from './two-calls/two-calls.component';
 import { CoreServicesModule } from './core-services/core-services.module';
-import { AppCoreServicesModule } from './app-core-services/app-core-services.module';
+import { ShareComponent } from './share/share.component';
+import { LatestFilterComponent } from './latest-filter/latest-filter.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    TwoCallsComponent,
+    ShareComponent,
+    LatestFilterComponent
   ],
-  imports: [
-    StudentModule,
+  imports: [CoreServicesModule,
     BrowserModule,
   ],
   providers: [],
