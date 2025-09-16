@@ -5,3 +5,6 @@ I previously explored which major websites are already using it—for example, Y
 The main difference between having an llms.txt file versus not having one is that, without it, LLMs often miss key information or only capture part of the content. With an llms.txt file, we can clearly define the full scope of what we want LLMs to read and present.
 
 For instance, if we want to explain how to set up our product and outline its benefits, the llms.txt file allows us to structure this information in a way that LLMs can accurately retrieve and present to users.
+
+
+https://yoast.com/llms.txt
